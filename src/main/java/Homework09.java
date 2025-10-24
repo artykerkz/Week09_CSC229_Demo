@@ -8,6 +8,35 @@
  * @author MoaathAlrajab
  */
 public class Homework09 {
+
+    public static void main(String[] args) {
+        int n = 1;
+        int triangle = 1;
+
+        while(countDivisors(triangle) <= 100) {
+            n++;
+            triangle += n;
+        }
+        System.out.println("The first triangle number with over 100 divisors is: " + triangle);
+    }
+
+    public static int countDivisors(int num){
+        int count = 0;
+        int sqrt = (int) Math.sqrt(num);
+
+        for (int i = 1; i <= sqrt; i++)  {
+            if (num % i == 0) {
+                if(i * i == num) {
+                    count += 1;
+        } else {
+                    count += 2;
+        }
+    }
+}
+    return count;
+    }
+}
+    
     
     // ToDo 01:  Write an algorithm to solve the following problem
     /*
@@ -26,7 +55,7 @@ Let us list the factors of the first seven triangle numbers:
 28: 1,2,4,7,14,28
 We can see that 28 is the first triangle number to have over five divisors.
 
-What is the value of the first triangle number to have over one hundred divisors?
+What is the value of the first triangle number to have over one hundred divisors? 73920
     
     */
     
